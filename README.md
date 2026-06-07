@@ -161,7 +161,7 @@ ResGCN 採多分支輸入設計：
 | Mean | 2.775 | 12.622 | 3.543 | 0.777 | 0.771 |
 | Std | 0.288 | 1.822 | 0.263 | 0.052 | 0.055 |
 
-![Regression scatter](pic/regression_scatter_fold_4.png)
+![Regression scatter](pic/regression_scatter.png)
 
 ### Risk Score Analysis
 
