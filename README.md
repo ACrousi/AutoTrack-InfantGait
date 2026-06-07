@@ -61,7 +61,7 @@ TWCC GPU 節點可用於姿態估測與批次影片推論；Job Scheduler VM 則
 
 ![Inference timing](pic/raws_inference_timing_success.png)
 
-上圖為成功推論影片的 stage-level 時間測量結果，共統計 341 支長度不超過 120 秒的影片。結果顯示整體處理時間會隨影片長度增加而上升，其中 RTMO + BoT-SORT 佔據主要推論時間；Pre-ResGCN 特徵整理與 ResGCN inference 則相對輕量。這也說明部署優化的重點應優先放在姿態估測、追蹤流程與 GPU 容器啟動策略，而不是 ResGCN 模型本身。
+上圖為成功推論影片的 stage-level 時間測量結果，測試環境為 NVIDIA Tesla V100 GPU，共統計 341 支長度不超過 120 秒的影片。結果顯示整體處理時間會隨影片長度增加而上升，其中 RTMO + BoT-SORT 佔據主要推論時間；Pre-ResGCN 特徵整理與 ResGCN inference 則相對輕量。這也說明部署優化的重點應優先放在姿態估測、追蹤流程與 GPU 容器啟動策略，而不是 ResGCN 模型本身。
 
 ## Technical Stack
 
@@ -74,7 +74,7 @@ TWCC GPU 節點可用於姿態估測與批次影片推論；Job Scheduler VM 則
 | Video Processing | OpenCV, 30 fps video normalization |
 | Modeling Input | COCO-17 keypoints, 8-joint gait skeleton, joint / velocity / bone / acceleration streams |
 | Evaluation | 5-fold cross-validation, MAE, RMSE, Pearson, Spearman, ROC-AUC |
-| Deployment | TWCC GPU cloud, REST API, batch/video inference service |
+| Deployment | TWCC GPU cloud, NVIDIA Tesla V100 GPU, REST API, batch/video inference service |
 
 ## Method
 
